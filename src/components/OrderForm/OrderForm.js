@@ -16,7 +16,9 @@ class OrderForm extends Component {
     if (this.state.name === '' || !this.state.ingredients.length) {
       return;
     }
-    API.postOrder(this.state.name, this.state.ingredients);
+    API.postOrder(this.state.name, this.state.ingredients).then(() => {
+      this.props.updateOrders();
+    });
     this.clearInputs();
   };
 
