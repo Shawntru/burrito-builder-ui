@@ -26,7 +26,7 @@ class App extends Component {
 
   render() {
     return (
-      <main className="App">
+      <main className="App" data-testid="app-test">
         {this.state.orders.length && (
           <div>
             <header>

@@ -10,3 +10,10 @@ export const testOrders = [
     name: 'Pat',
   },
 ];
+
+export const testPostOrder = [
+  {
+    name: 'Pat',
+    ingredients: ['beans', 'lettuce', 'carnitas', 'queso fresco', 'jalapeno'],
+  },
+];
