@@ -66,7 +66,7 @@ class OrderForm extends Component {
     });
 
     return (
-      <form>
+      <form data-testid="form-test">
         <input
           type="text"
           placeholder="Name"

@@ -1,21 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { testOrders } from '../../testOrders';
 
 import Orders from './Orders';
-
-const testOrders = [
-  {
-    id: 1,
-    ingredients: ['beans', 'lettuce', 'carnitas', 'queso fresco', 'jalapeno'],
-    0: 'beans',
-    1: 'lettuce',
-    2: 'carnitas',
-    3: 'queso fresco',
-    4: 'jalapeno',
-    name: 'Pat',
-  },
-];
 
 describe('Orders', () => {
   it('should render the orders component', () => {
