@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as API from '../../apiCalls.js';
 
 class OrderForm extends Component {
   constructor(props) {
@@ -12,6 +13,10 @@ class OrderForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    if (this.state.name === '' || !this.state.ingredients.length) {
+      return;
+    }
+    API.postOrder(this.state.name, this.state.ingredients);
     this.clearInputs();
   };
 
@@ -25,7 +30,9 @@ class OrderForm extends Component {
 
   handleIngredientChange = (e) => {
     e.preventDefault();
-    if (this.state.ingredients.includes(e.target.name)) return;
+    if (this.state.ingredients.includes(e.target.name)) {
+      return;
+    }
     this.setState({ ingredients: [...this.state.ingredients, e.target.name] });
   };
 
